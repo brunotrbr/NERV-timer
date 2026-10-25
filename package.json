@@ -1,0 +1,30 @@
+{
+  "name": "nerv-timer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NERV-inspired desktop clock, stopwatch, and countdown timer",
+  "author": "NERV Timer contributors",
+  "license": "MIT",
+  "scripts": {
+    "prepare:assets": "node scripts/setup.mjs",
+    "dev": "npm run prepare:assets && neu run",
+    "setup:neutralino": "npm run prepare:assets && neu update && neu plugins --add @neutralinojs-contrib/builder",
+    "prevalidate": "npm run prepare:assets",
+    "validate": "node scripts/validate.mjs",
+    "checksums": "node scripts/checksums.mjs",
+    "test:contracts": "node --test tests/contracts.test.mjs",
+    "test": "npm run validate && npm run test:contracts && playwright test",
+    "build": "npm run validate && neu build --embed-resources && node scripts/collect-artifacts.mjs portable",
+    "package:windows": "npm run build && neu builder nsis --x64 && node scripts/collect-artifacts.mjs windows",
+    "package:debian": "npm run build && neu builder deb --x64 && node scripts/patch-deb.mjs && node scripts/collect-artifacts.mjs debian",
+    "postinstall": "node scripts/setup.mjs"
+  },
+  "devDependencies": {
+    "@neutralinojs-contrib/builder": "1.0.0",
+    "@neutralinojs/neu": "11.7.2",
+    "@playwright/test": "1.56.0",
+    "howler": "2.2.3",
+    "http-server": "14.1.1",
+    "png-to-ico": "3.0.1"
+  }
+}

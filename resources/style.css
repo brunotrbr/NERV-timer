@@ -1,0 +1,352 @@
+@font-face {
+  font-family: 'digital7_mono';
+  src: url('src/fonts/digital7_mono.eot');
+  src: url('src/fonts/digital7_mono.eot') format('embedded-opentype'),
+  url('src/fonts/digital7_mono.woff2') format('woff2'),
+  url('src/fonts/digital7_mono.woff') format('woff'),
+  url('src/fonts/digital7_mono.ttf') format('truetype'),
+  url('src/fonts/digital7_mono.svg#digital7_mono') format('svg');
+}
+
+body, html{
+  overflow: hidden;
+  background: black;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#framing {
+  position: relative;
+  flex: 0 0 auto;
+  height: 480px;
+  width: 800px;
+  transform: scale(var(--ui-scale, 1));
+  transform-origin: center;
+}
+#wrapper {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 480px;
+  width: 800px;
+  padding: 0px;
+  font-family: arial;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transition: background-position .2s;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, rgba(195,0,0,1) 0%, rgba(255,244,0,1) 25%, rgba(95,233,0,1) 50%, rgba(69,252,213,1) 75%, rgba(69,193,252,1) 100%);  
+  background-color: rgba(195,0,0,1);
+  background-size: 850px 100%;
+}
+svg#clock-main-shape {
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0,0,0,0) 4%),
+              linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0,0,0,0) 4%),
+              linear-gradient(270deg, rgb(0, 0, 0) 0%, rgba(0,0,0,0) 4%),
+              linear-gradient(360deg, rgb(0, 0, 0) 0%, rgba(0,0,0,0) 1%);
+}
+#bigClock {
+  font-family: 'digital7_mono';
+  position: absolute;
+  z-index: 999;
+  width: auto;
+  display: block;
+  box-sizing: border-box;
+  top: 130px;
+  left: 180px;
+  text-shadow: 0px 0px 13px red;
+}
+#bigClock span {
+  display: inline-block;
+  font-size: 150px;
+  width: auto;
+  margin: -10px 0 0 0;
+  letter-spacing: 0px;
+}
+.clocktitleimg {
+  position: absolute;
+  z-index: 9999;
+  top: -33px;
+  left: -90px;
+}
+span#clockSecond {
+  font-size: 65px !important;
+}
+span.clockSeparator.seconds {
+  font-size: 65px !important;
+  margin-right: -13px !important;
+  margin-left: -13px !important;
+}
+span.clockSeparator {
+  margin-left: -28px !important;
+  margin-right: -30px !important;
+}
+.mainColor {
+  color: red;
+}
+.mainColorstroke {
+  stroke: red;
+}
+
+.mainColorfill {
+  fill: red;
+  text-shadow: 0px 0px 13px red;
+}
+
+
+
+#session, #message {
+  font-family: arial;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0px 0px 13px red;
+  position: absolute;
+}
+
+#session {
+  right: 130px;
+  top: 120px;
+}
+
+#session span {
+  right: 130px;
+  top: 120px;
+}
+
+div#databoxes {
+  position: absolute;
+  z-index: 88888;
+  bottom: 145px;
+  left: 195px;
+  text-shadow: 0px 0px 13px red;
+}
+
+.bottombox {
+  text-shadow: 0px 0px 13px red;
+  display: block;
+  border: 1px solid red;
+  background: black;
+  color: red;
+  height: 30px;
+  width: auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 7px;
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+  margin: -4px 13px 0px 10px;
+}
+
+.cls-1, .cls-3 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+
+.cls-1 {
+  stroke: #000;
+}
+
+.cls-2 {
+  fill: #94ffee;
+}
+
+.cls-3 {
+  stroke: red;
+  stroke-width: 3px;
+}
+
+.cls-4 {
+  fill: red;
+}
+
+.cls-5 {
+  font-size: 7.51px;
+  font-family: MyriadPro-Regular, Myriad Pro;
+}
+
+.cls-6 {
+  letter-spacing: -0.01em;
+}
+
+.cls-7 {
+  letter-spacing: -0.01em;
+}
+
+.cls-8 {
+  letter-spacing: 0.03em;
+}
+
+.cls-9 {
+  letter-spacing: -0.01em;
+}
+
+.cls-10 {
+  letter-spacing: 0.02em;
+}
+
+/*
+Copyright (c) 2011, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.9.0
+*/
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small}select,input,textarea,button{font:99% arial,helvetica,clean,sans-serif}table{font-size:inherit;font:100%}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%}/*
+Copyright (c) 2011, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.9.0
+*/
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,select,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,button,caption,cite,code,dfn,em,input,optgroup,option,select,strong,textarea,th,var{font:inherit}del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000}
+
+/* clearfix */
+.clearfix{zoom:1;}
+.clearfix:after{content:'.';display:block;clear:both;visibility:hidden;height:0;font-size:0;}
+
+/* Controls */
+
+.bottombox {
+  cursor: pointer;
+  width: 60px;
+  margin-right: 15px;
+  margin-left: 0;
+  text-align: center;
+  padding:    2px 2px 5px 2px;
+
+}
+
+.bottombox.active::after {
+  content: '';
+  display: block;
+  background: red;
+  width: auto;
+  height: 15px;
+  position:relative;
+  border-radius: 5px;
+  z-index: 888;
+}
+
+.audio_control {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  bottom: 20px;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 28px;
+  z-index: 8888;
+}
+
+.audio_control img{
+  transition: opacity .5s;
+  opacity: .8;
+  display: block;
+  width: 25px;
+}
+#date {
+  position: absolute;
+  color: black;
+  bottom: 20px;
+  right: 80px;
+  text-align: right;
+  background: #b00000;
+  padding: 0px 8px;
+  font-family: 'digital7_mono';
+  font-size: 22px;
+}
+
+
+.audio_control img:hover{
+  opacity: 1;
+}
+
+.audio_control:focus-visible {
+  outline: 2px solid red;
+  outline-offset: 4px;
+}
+
+/* Animations */
+
+.shutdown {
+  -webkit-animation-name: shutdownEva;
+  -webkit-animation-delay: 3.8s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes shutdownEva {
+  from {
+    background: red;
+  }
+  to {
+    background: black;
+  }
+}
+.glitch {
+  -webkit-animation-name: glitchEva;
+  -webkit-animation-duration: .08s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function:ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+}
+
+@-webkit-keyframes glitchEva {
+  from {
+    filter:brightness(0%);
+  }
+  to {
+    filter:brightness(100%);
+  }
+}
+.heavy_glitch {
+  -webkit-animation-name: glitchierEva;
+  -webkit-animation-duration: .1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 8;
+  -webkit-animation-fill-mode: forwards;
+
+}
+
+@-webkit-keyframes glitchierEva {
+  from {
+    filter: invert(100%);
+  }
+  to {
+    filter: invert(0%);
+  }
+}
+
+.death {
+  -webkit-animation-name: death;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 3.8s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+
+}
+
+@-webkit-keyframes death {
+  from {
+    filter: opacity(1);
+  }
+  to {
+    filter: opacity(0);
+  }
+}
+
+.inverted {
+  filter: invert(100%);
+}
